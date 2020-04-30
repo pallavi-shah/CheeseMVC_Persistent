@@ -1,0 +1,23 @@
+﻿@model List<CheeseMVC.Models.Menu>
+@{
+    ViewData["Title"] = "Menus";
+}
+
+<h3>List of Menus</h3>
+
+<br />
+
+@if (Model.Count==0)
+{
+    <p>No Menus Yet !!</p>
+}
+
+<ul>
+    @foreach (var menu in Model)
+    {
+        <li><a asp-controller="Menu" asp-action="ViewMenu" asp-route-id="@menu.ID">@menu.Name</a></li>
+    }
+</ul>
+<br />
+<p style="font-weight: bold"><a asp-controller="Menu" asp-action="Add">Add Menu</a></p>
+

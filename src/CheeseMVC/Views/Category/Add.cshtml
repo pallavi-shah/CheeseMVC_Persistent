@@ -1,0 +1,11 @@
+﻿@model CheeseMVC.ViewModels.AddCategoryViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add</h2>
+<form asp-controller="Category" asp-action="Add">
+    <label asp-for="@Model.Name"><input asp-for="@Model.Name" /></label>
+    <span asp-validation-for="@Model.Name"></span>
+    <button>Add Category</button>
+</form>
